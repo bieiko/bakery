@@ -62,7 +62,9 @@
   --color-secondary-dark: #a18268;
 }
 /* base */
-* {
+* ,
+*::before
+*::after {
   box-sizing: border-box;
 }
 body {
@@ -100,6 +102,7 @@ a {
   text-decoration: none;
   font-style: normal;
   color: var(--color-primary-light);
+  display: inline-block;
 }
 a:hover {
   color: var(--color-brand);
@@ -233,6 +236,7 @@ header {
 }
 
 /* chef section */
+
 .chefs-title {
   max-width: 520px;
   margin: 0 auto 80px;
@@ -244,6 +248,19 @@ header {
   border: 2px solid #cfcfbc;
   content: "";
 }
+.chefs-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 30px;
+
+}
+.chefs-item {
+  flex-basis: calc((100% - 30px) / 2);
+}
+.chef-card {
+  display: flex;
+  gap: 30px;
+}
 .chef-img {
   border-radius: 4px 4px 4px 200px;
   box-shadow: -16px 16px 0 0 var(--color-primary-light),
@@ -254,6 +271,13 @@ header {
   font-weight: 600;
   margin-bottom: 16px;
 }
+.chef-text p {
+  margin-bottom: 24px;
+}
+.chef-text p:last-child {
+  margin-bottom: 0;
+}
+
 /* format section */
 .formats-title {
   margin-bottom: 80px;
@@ -262,8 +286,14 @@ header {
   font-size: 24px;
   font-weight: 600;
 }
+.formats-container {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
 .carousel-button {
   display: flex;
+  flex-shrink: 0;
   align-items: center;
   justify-content: center;
   width: 44px;
@@ -304,17 +334,55 @@ header {
   font-weight: 300;
 }
 /* contact section */
+.contact-section {
+  padding-bottom: 96px;
+}
+.contact-container {
+  display: flex;
+  gap: 32px;
+}
 .contacts-title {
   margin-bottom: 16px;
 }
 .contacts-section-title {
   color: var(--color-brand-dark);
 }
+.contact-map {
+  flex-shrink: 0;
+  border: none;
+  border-radius: 16px;
+}
 /* footer */
-.footer-address-items {
+.footer {
+  padding: 32px 0;
+}
+.footer-container {
+  display: flex;
+  gap: 20px;
+}
+.footer-nav{
+  display: flex;
+  flex-basis: 50%;
+  gap: 20px;
+}
+.footer-logo,
+.footer-menu {
+  flex-grow: 1;
+}
+
+
+.footer-address {
+  display: flex;
+  flex-basis: 50%;
+  gap: 20px;
   font-size: 16px;
   font-weight: 300;
 }
+.footer-address-list,
+.address-info {
+  flex-grow: 1;
+}
+
 .social-icon {
   fill: var(--color-primary-light);
 }
