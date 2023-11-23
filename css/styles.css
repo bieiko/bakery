@@ -62,9 +62,8 @@
   --color-secondary-dark: #a18268;
 }
 /* base */
-* ,
-*::before
-*::after {
+*,
+*::before *::after {
   box-sizing: border-box;
 }
 body {
@@ -238,21 +237,28 @@ header {
 /* chef section */
 
 .chefs-title {
-  max-width: 520px;
+  position: relative;
   margin: 0 auto 80px;
 }
 .chefs-title::before,
 .chefs-title::after {
+  position: absolute;
   display: block;
   width: 352px;
   border: 2px solid #cfcfbc;
   content: "";
+  bottom: 24px;
+}
+.chefs-title::before {
+  left: 0;
+}
+.chefs-title::after {
+  right: 0;
 }
 .chefs-list {
   display: flex;
   flex-wrap: wrap;
   gap: 40px 30px;
-
 }
 .chefs-item {
   flex-basis: calc((100% - 30px) / 2);
@@ -355,12 +361,39 @@ header {
 /* footer */
 .footer {
   padding: 32px 0;
+  position: relative;
+  background-image: url(../images/footer.png);
+  background-color: var(--color-primary-dark);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
+.footer::before {
+  position: absolute;
+  background-image: url("../images/bread1.png");
+  width: 180px;
+  height: 120px;
+  content: "";
+  background-repeat: no-repeat;
+  bottom: 0;
+}
+.footer::after {
+  position: absolute;
+  width: 160px;
+  height: 120px;
+  background-size: 100%;
+  background-image: url("../images/bread2.png");
+  background-repeat: no-repeat;
+  content: "";
+  bottom: 0;
+  right: 0;
+}
+
 .footer-container {
   display: flex;
   gap: 20px;
 }
-.footer-nav{
+.footer-nav {
   display: flex;
   flex-basis: 50%;
   gap: 20px;
@@ -369,7 +402,6 @@ header {
 .footer-menu {
   flex-grow: 1;
 }
-
 
 .footer-address {
   display: flex;
@@ -398,10 +430,32 @@ header {
   font-weight: 400;
   color: #a18268;
 }
-.footer {
-  background-image: url(../images/footer.png);
-  background-color: var(--color-primary-dark);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+/* Modal */
+.backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.modal {
+  position: relative;
+  width: 880px;
+  height: 880px;
+  background-color: var(--color-primary-light);
+  border-radius: 32px;
+}
+.modal-button-close {
+  position: absolute;
+  top: 40px;
+  right: 40px;
 }
