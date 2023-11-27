@@ -129,6 +129,7 @@ iframe {
   border: 2px solid var(--color-brand);
   border-radius: 8px;
   cursor: pointer;
+  transition: color 0.3s, background-color 0.3s;
 }
 .button:hover {
   color: var(--color-brand-dark);
@@ -322,6 +323,7 @@ header {
   border: 1px solid var(--color-primary-dark);
   padding: 0;
   cursor: pointer;
+  transition: fill 0.3s;
 }
 .carousel-button:hover {
   background-color: var(--color-primary-dark);
@@ -373,6 +375,14 @@ header {
 .contacts-section-title {
   color: var(--color-brand-dark);
 }
+.contact-section-form {
+  width: 85%;
+}
+.contact-form-field {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
 .contact-map {
   flex-shrink: 0;
   border: none;
@@ -478,9 +488,73 @@ header {
   max-height: 880px;
   background-color: var(--color-primary-light);
   border-radius: 32px;
+  overflow: auto;
 }
 .modal-button-close {
   position: absolute;
   top: 40px;
   right: 40px;
+}
+/* form */
+.contact-form-title {
+  text-align: center;
+  padding: 128px 0 0 0;
+  font-size: 64px;
+  font-weight: 900;
+  margin: 0;
+}
+.contact-form-dscr {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 72px;
+}
+.form-field {
+  margin-bottom: 32px;
+  text-align: center;
+}
+.form-label {
+  display: block;
+}
+.form-input-size {
+  width: 60%;
+}
+.form-input {
+  padding: 16px 48px;
+  font-size: 16px;
+  line-height: 1.17;
+  border: 1px solid var(--color-secondary-dark);
+  background-color: transparent;
+  border-radius: 8px;
+}
+.form-input:focus {
+  border-color: var(--color-brand-dark);
+  outline: none;
+}
+.form-input::placeholder {
+  color: var(--color-secondary-dark);
+  font-size: 16px;
+  line-height: 1.17;
+}
+.form-input:focus::placeholder {
+  color: var(--color-primary-dark);
+  font-size: 16px;
+  line-height: 1.17;
+}
+.form-button {
+  display: block;
+  margin: 0 auto 24px;
+}
+.form-terms-condition {
+  max-width: 220px;
+  margin: 0 auto;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: center;
+}
+.modal-form-police {
+  color: var(--color-primary-dark);
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
