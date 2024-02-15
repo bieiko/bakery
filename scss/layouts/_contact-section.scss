@@ -1,26 +1,19 @@
 .contact-section {
-    padding-bottom: 96px;
-  }
-  .contact-container {
-    display: flex;
-    gap: 32px;
-  }
-  .contacts-title {
-    margin-bottom: 16px;
-  }
-  .contacts-section-title {
-    color: var(--color-brand-dark);
-  }
-  .contact-section-form {
-    width: 85%;
-  }
-  .contact-form-field {
-    margin-bottom: 24px;
-    text-align: center;
-  }
-  
-  .contact-map {
-    flex-shrink: 0;
-    border: none;
-    border-radius: 16px;
-  }
+  padding-bottom: 96px;
+}
+.contact-container {
+  display: flex;
+  gap: 32px;
+}
+.contacts-title {
+  margin-bottom: 16px;
+}
+.contacts-section-title {
+  color: var(--color-brand-dark);
+}
+
+.contact-map {
+  flex-shrink: 0;
+  border: none;
+  border-radius: 16px;
+}
