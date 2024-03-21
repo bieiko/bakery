@@ -1,12 +1,18 @@
-.formats-title {
-  margin-bottom: 80px;
-}
-.formats-section-title {
-  font-size: 24px;
-  font-weight: 600;
-}
-.formats-container {
-  display: flex;
-  gap: 32px;
-  align-items: center;
+.formats-section {
+  &__title {
+    margin-bottom: 80px;
+  }
+  &__container {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+  }
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  &__item {
+    flex-basis: calc((100% - 40px) / 3);
+  }
 }
